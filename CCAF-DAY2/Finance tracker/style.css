@@ -1,0 +1,79 @@
+body { /* Main page styling */
+  font-family: Arial, sans-serif; /* Sets font */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  background: #f5f5f5; /* Light grey background */
+}
+
+nav { /* Navigation bar */
+  background: #222; /* Dark background */
+  padding: 10px; /* Space inside nav */
+  display: flex; /* Align buttons horizontally */
+  gap: 10px; /* Space between buttons */
+}
+
+nav button { /* Nav buttons */
+  background: #444; /* Dark grey */
+  color: white; /* White text */
+  border: none; /* No border */
+  padding: 10px 15px; /* Button size */
+  cursor: pointer; /* Pointer cursor */
+  border-radius: 5px; /* Rounded corners */
+}
+
+nav button:hover { /* Hover effect */
+  background: #666; /* Lighter grey */
+}
+
+.tab { /* Each section */
+  padding: 20px; /* Space inside section */
+}
+
+.hidden { /* Used to hide inactive tabs */
+  display: none;
+}
+
+.cards { /* Dashboard card grid */
+  display: grid; /* Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+  gap: 15px; /* Space between cards */
+  margin-top: 20px; /* Space above cards */
+}
+
+.card { /* Individual dashboard card */
+  background: white; /* White background */
+  padding: 15px; /* Space inside card */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow */
+}
+
+form { /* All forms */
+  margin: 15px 0; /* Space above and below */
+  display: flex; /* Align inputs horizontally */
+  gap: 10px; /* Space between inputs */
+}
+
+form input { /* Form inputs */
+  padding: 8px; /* Input size */
+  flex: 1; /* Make inputs expand */
+}
+
+form button { /* Form buttons */
+  padding: 8px 12px; /* Button size */
+  background: #007bff; /* Blue color */
+  color: white; /* White text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+}
+
+ul { /* Lists */
+  list-style: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+}
+
+ul li { /* List items */
+  background: white; /* White background */
+  padding: 10px; /* Space inside */
+  margin: 5px 0; /* Space between items */
+  border-radius: 5px; /* Rounded corners */
+}

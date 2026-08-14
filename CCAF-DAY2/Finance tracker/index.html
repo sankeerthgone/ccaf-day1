@@ -1,0 +1,150 @@
+<<!DOCTYPE html> <!-- Tells the browser this is an HTML5 document -->
+<html lang="en"> <!-- Sets the language of the page to English -->
+<head> <!-- Contains metadata and links -->
+  <meta charset="UTF-8"> <!-- Ensures correct text encoding -->
+  <title>Personal Finance Tracker</title> <!-- Title shown in browser tab -->
+
+  <link rel="stylesheet" href="style.css"> <!-- Connects your CSS file -->
+</head>
+
+<body> <!-- Everything visible on the page goes inside the body -->
+
+  <!-- Navigation bar with buttons to switch between sections -->
+  <nav>
+    <button data-tab="dashboard">Dashboard</button> <!-- Shows dashboard -->
+    <button data-tab="income">Income</button> <!-- Shows income section -->
+    <button data-tab="expenses">Expenses</button> <!-- Shows expenses section -->
+    <button data-tab="investments">Investments</button> <!-- Shows investments -->
+    <button data-tab="stocks">Stocks to Watch</button> <!-- Shows stocks list -->
+  </nav>
+
+  <!-- Main container where all sections live -->
+  <div id="app">
+
+    <!-- DASHBOARD SECTION -->
+    <section id="dashboard" class="tab">
+      <h1>Dashboard</h1> <!-- Title -->
+
+      <div id="netCashFlow"></div> <!-- Net cash flow will be shown here -->
+
+      <!-- Grid of dashboard cards -->
+      <div class="cards">
+        <div class="card" id="incomeCard"></div> <!-- Total income -->
+        <div class="card" id="expensesCard"></div> <!-- Total expenses -->
+        <div class="card" id="emiCard"></div> <!-- Total EMI -->
+        <div class="card" id="sipCard"></div> <!-- Total SIP -->
+        <div class="card" id="debtCard"></div> <!-- Outstanding debt -->
+        <div class="card" id="fdCard"></div> <!-- FD value -->
+        <div class="card" id="sipContributionCard"></div> <!-- SIP contributed -->
+        <div class="card" id="stocksCard"></div> <!-- Stocks invested -->
+      </div>
+
+      <!-- Quick add salary -->
+      <h3>Quick Add</h3>
+      <form id="quickIncomeForm">
+        <input type="number" placeholder="Salary Amount"> <!-- Salary input -->
+        <button>Add Salary</button> <!-- Add salary button -->
+      </form>
+
+      <!-- Quick add expense -->
+      <form id="quickExpenseForm">
+        <input type="number" placeholder="Expense Amount"> <!-- Expense input -->
+        <button>Add Expense</button> <!-- Add expense button -->
+      </form>
+    </section>
+
+    <!-- INCOME SECTION -->
+    <section id="income" class="tab hidden"> <!-- Hidden until clicked -->
+      <h1>Income</h1>
+
+      <form id="incomeForm"> <!-- Form to add income -->
+        <input type="number" placeholder="Amount"> <!-- Income amount -->
+        <input type="text" placeholder="Source"> <!-- Income source -->
+        <button>Add Income</button> <!-- Submit -->
+      </form>
+
+      <ul id="incomeList"></ul> <!-- List of income entries -->
+    </section>
+
+    <!-- EXPENSES SECTION -->
+    <section id="expenses" class="tab hidden">
+      <h1>Expenses</h1>
+
+      <form id="expenseForm"> <!-- Form to add expense -->
+        <input type="number" placeholder="Amount"> <!-- Expense amount -->
+        <input type="text" placeholder="Category"> <!-- Category -->
+        <input type="date"> <!-- Date -->
+        <input type="text" placeholder="Why? (optional)"> <!-- Optional reason -->
+        <button>Add Expense</button>
+      </form>
+
+      <select id="expenseFilter"> <!-- Dropdown to filter expenses -->
+        <option value="all">All Categories</option>
+      </select>
+
+      <ul id="expenseList"></ul> <!-- List of expenses -->
+    </section>
+
+    <!-- INVESTMENTS SECTION -->
+    <section id="investments" class="tab hidden">
+      <h1>Investments</h1>
+
+      <!-- Loans -->
+      <h2>Loans</h2>
+      <form id="loanForm">
+        <input type="number" placeholder="EMI"> <!-- EMI amount -->
+        <input type="number" placeholder="Rate %"> <!-- Interest rate -->
+        <input type="number" placeholder="Months Left"> <!-- Remaining months -->
+        <button>Add Loan</button>
+      </form>
+      <ul id="loanList"></ul>
+
+      <!-- FDs -->
+      <h2>FDs</h2>
+      <form id="fdForm">
+        <input type="number" placeholder="Principal"> <!-- FD principal -->
+        <input type="number" placeholder="Rate %"> <!-- FD rate -->
+        <input type="date"> <!-- FD date -->
+        <button>Add FD</button>
+      </form>
+      <ul id="fdList"></ul>
+
+      <!-- SIPs -->
+      <h2>SIPs</h2>
+      <form id="sipForm">
+        <input type="number" placeholder="Monthly Amount"> <!-- SIP amount -->
+        <input type="date"> <!-- SIP start date -->
+        <button>Add SIP</button>
+      </form>
+      <ul id="sipList"></ul>
+
+      <!-- Stocks -->
+      <h2>My Stocks</h2>
+      <form id="stockForm">
+        <input type="text" placeholder="Name"> <!-- Stock name -->
+        <input type="text" placeholder="Sector"> <!-- Sector -->
+        <input type="number" placeholder="Quantity"> <!-- Quantity -->
+        <input type="number" placeholder="Buy Price"> <!-- Buy price -->
+        <button>Add Stock</button>
+      </form>
+      <ul id="stockList"></ul>
+    </section>
+
+    <!-- STOCKS TO WATCH SECTION -->
+    <section id="stocks" class="tab hidden">
+      <h1>Stocks to Watch</h1>
+
+      <button id="sortTop">Top Performers</button> <!-- Sort button -->
+
+      <select id="stockSectorFilter"> <!-- Filter by sector -->
+        <option value="all">All Sectors</option>
+      </select>
+
+      <ul id="watchList"></ul> <!-- Sample stocks list -->
+    </section>
+
+  </div>
+
+  <script src="script.js"></script> <!-- Connects your JS file -->
+</body>
+</html>
